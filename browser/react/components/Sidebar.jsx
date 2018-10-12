@@ -15,6 +15,12 @@ export default ({ playlists }) => (
             <Link to="/artists">ARTISTS</Link>
           </h4>
         </section>
+
+        <section>
+          <h4 className="menu-item active">
+            <Link to="/Lyrics">Lyrics</Link>
+          </h4>
+        </section>
         <hr />
         <section>
           <h4 className="text-muted">PLAYLISTS</h4>

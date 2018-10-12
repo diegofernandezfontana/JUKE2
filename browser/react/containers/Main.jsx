@@ -10,6 +10,7 @@ import FilterableArtistsContainer from './FilterableArtistsContainer';
 import Artist from '../components/Artist';
 import Playlist from '../components/Playlist';
 import NewPlaylistContainer from '../containers/NewPlaylistContainer';
+import LyricsContainer from '../containers/LyricsContainer';
 
 export default class Main extends React.Component {
   constructor(props){
@@ -208,14 +209,15 @@ export default class Main extends React.Component {
             <Route path="/playlists/new" render={() => <NewPlaylistContainer addPlaylist={this.addPlaylist} />} />
             <Route path="/playlists/:id" render={({ match }) =>
               <Playlist
-                playlistId={match.params.id}
-                playlist={selectedPlaylist}
-                start={this.start}
-                currentSong={currentSong}
-                selectPlaylist={this.selectPlaylist}
-                addSong={this.addSong}
+              playlistId={match.params.id}
+              playlist={selectedPlaylist}
+              start={this.start}
+              currentSong={currentSong}
+              selectPlaylist={this.selectPlaylist}
+              addSong={this.addSong}
               />} 
             />
+              <Route exact  path="/Lyrics" render={() => <LyricsContainer/> } />
             <Redirect from="/" to="/albums" />
           </Switch>
         </div>
